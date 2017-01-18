@@ -5,6 +5,8 @@ A very simple browser script to parse html strings into document fragments.
 ### Usage
 Note: If required you need to transpile `string-to-html.js` into ES5 and use a module loader.
 
+Install with npm `npm install string-to-html`;
+
 ```js
 import toHtml from 'string-to-html';
 const htmlString = '<div><p>Hello World</p><div>';
