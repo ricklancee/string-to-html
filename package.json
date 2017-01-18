@@ -1,0 +1,20 @@
+{
+  "name": "parse-html",
+  "version": "1.0.0",
+  "description": "Very simple browser script to parse a html strings into a document fragment",
+  "main": "parse-html.js",
+  "scripts": {
+    "build": "./node_modules/.bin/browserify test.js -o test-browserify.js -t [ babelify --presets [ es2015 ] ]",
+    "test": "npm run build && ./node_modules/.bin/mocha-phantomjs test.html"
+  },
+  "author": "Rick Lancee",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.18.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.3.0",
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "mocha-phantomjs": "^4.1.0"
+  }
+}
