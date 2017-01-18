@@ -1,7 +1,7 @@
 {
   "name": "parse-html",
   "version": "1.0.0",
-  "description": "Very simple browser script to parse a html strings into a document fragment",
+  "description": "A very simple browser script to parse html strings into document fragments",
   "main": "parse-html.js",
   "scripts": {
     "build": "./node_modules/.bin/browserify test.js -o test-browserify.js -t [ babelify --presets [ es2015 ] ]",
