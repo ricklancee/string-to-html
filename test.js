@@ -1,10 +1,10 @@
-import parseHtml from "./parse-html";
+import toHtml from "./string-to-html";
 
-describe('parseHtml', function() {
+describe('stringToHtml', function() {
   it('should parse a html string into document framents', function() {
     const someHtmlString = '<div><div>somestring</div></div>';
 
-    const fragment = parseHtml(someHtmlString);
+    const fragment = toHtml(someHtmlString);
     expect(typeof fragment).to.equal('object');
     expect(fragment.querySelector('div > div').innerHTML).to.equal('somestring');
   });

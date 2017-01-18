@@ -1,8 +1,8 @@
 {
-  "name": "parse-html",
+  "name": "string-to-html",
   "version": "1.0.0",
   "description": "A very simple browser script to parse html strings into document fragments",
-  "main": "parse-html.js",
+  "main": "string-to-html.js",
   "scripts": {
     "build": "./node_modules/.bin/browserify test.js -o test-browserify.js -t [ babelify --presets [ es2015 ] ]",
     "test": "npm run build && ./node_modules/.bin/mocha-phantomjs test.html"

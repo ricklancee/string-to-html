@@ -4,11 +4,11 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = parseHtml;
+exports.default = toHtml;
 var contextRange = document.createRange();
 contextRange.setStart(document.body, 0);
 
-function parseHtml(string) {
+function toHtml(string) {
   return contextRange.createContextualFragment(string);
 };
 
@@ -17,20 +17,20 @@ function parseHtml(string) {
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _parseHtml = require('./parse-html');
+var _stringToHtml = require('./string-to-html');
 
-var _parseHtml2 = _interopRequireDefault(_parseHtml);
+var _stringToHtml2 = _interopRequireDefault(_stringToHtml);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-describe('parseHtml', function () {
+describe('stringToHtml', function () {
   it('should parse a html string into document framents', function () {
     var someHtmlString = '<div><div>somestring</div></div>';
 
-    var fragment = (0, _parseHtml2.default)(someHtmlString);
+    var fragment = (0, _stringToHtml2.default)(someHtmlString);
     expect(typeof fragment === 'undefined' ? 'undefined' : _typeof(fragment)).to.equal('object');
     expect(fragment.querySelector('div > div').innerHTML).to.equal('somestring');
   });
 });
 
-},{"./parse-html":1}]},{},[2]);
+},{"./string-to-html":1}]},{},[2]);
