@@ -9,7 +9,7 @@ var contextRange = document.createRange();
 contextRange.setStart(document.body, 0);
 
 function toHtml(string) {
-  return contextRange.createContextualFragment(string);
+  return contextRange.createContextualFragment(string).firstChild;
 };
 
 },{}],2:[function(require,module,exports){
@@ -28,6 +28,9 @@ describe('stringToHtml', function () {
     var someHtmlString = '<div><div>somestring</div></div>';
 
     var fragment = (0, _stringToHtml2.default)(someHtmlString);
+
+    fragment.classList.add('foo');
+    expect(fragment.className).to.equal('foo');
     expect(typeof fragment === 'undefined' ? 'undefined' : _typeof(fragment)).to.equal('object');
     expect(fragment.querySelector('div > div').innerHTML).to.equal('somestring');
   });
