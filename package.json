@@ -7,6 +7,13 @@
     "build": "./node_modules/.bin/browserify test.js -o test-browserify.js -t [ babelify --presets [ es2015 ] ]",
     "test": "npm run build && ./node_modules/.bin/mocha-phantomjs test.html"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ricklancee/string-to-html.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ricklancee/string-to-html/issues"
+  },
   "author": "Rick Lancee",
   "license": "MIT",
   "devDependencies": {
