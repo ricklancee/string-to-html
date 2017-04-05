@@ -1,6 +1,6 @@
 # String To Html
 
-[![npm version](https://badge.fury.io/js/string-to-html.svg)](https://badge.fury.io/js/string-to-html)
+[![npm version](https://badge.fury.io/js/string-to-html.svg)](https://npmjs.com/package/string-to-html)
 
 A very simple browser script to parse html strings into document fragments.
 
