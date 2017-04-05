@@ -23,16 +23,23 @@ var _stringToHtml2 = _interopRequireDefault(_stringToHtml);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var people = ['Alfred', 'Jodocus', 'Kwak', 'Dolf'];
+var htmlString = '\n  <ul class="list">\n    ' + people.map(function (name) {
+  return '<li>' + name + '</li>';
+}).join('') + '\n  </ul>\n';
+
 describe('stringToHtml', function () {
-  it('should parse a html string into document framents', function () {
-    var someHtmlString = '<div><div>somestring</div></div>><p>foo</p>';
+  it('should parse a html string into document frament', function () {
+    var fragment = (0, _stringToHtml2.default)(htmlString);
 
-    var fragment = (0, _stringToHtml2.default)(someHtmlString);
-
-    fragment.querySelector('p').classList.add('foo');
-    expect(fragment.querySelector('p').className).to.equal('foo');
     expect(typeof fragment === 'undefined' ? 'undefined' : _typeof(fragment)).to.equal('object');
-    expect(fragment.querySelector('div > div').innerHTML).to.equal('somestring');
+    expect(fragment.querySelectorAll('.list > li').length).to.equal(4);
+  });
+
+  it('should be able to append the document frament to the dom', function () {
+    var fragment = (0, _stringToHtml2.default)(htmlString);
+    document.body.appendChild(fragment);
+    expect(document.querySelectorAll('.list > li').length).to.equal(4);
   });
 });
 
