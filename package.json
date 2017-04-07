@@ -5,7 +5,8 @@
   "main": "string-to-html.js",
   "scripts": {
     "build": "./node_modules/.bin/browserify test.js -o test-browserify.js -t [ babelify --presets [ es2015 ] ]",
-    "test": "npm run build && ./node_modules/.bin/mocha-phantomjs test.html"
+    "test": "npm run build && ./node_modules/.bin/mocha-phantomjs test.html",
+    "bundle": "rollup string-to-html.js --format iife -o string-to-html-es5.js -n toHtml"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
     "browserify": "^13.3.0",
     "chai": "^3.5.0",
     "mocha": "^3.2.0",
-    "mocha-phantomjs": "^4.1.0"
+    "mocha-phantomjs": "^4.1.0",
+    "rollup": "^0.41.6"
   }
 }
