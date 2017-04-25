@@ -2,11 +2,17 @@
   "name": "string-to-html",
   "version": "1.3.0",
   "description": "A very simple browser script to parse html strings into document fragments",
-  "main": "string-to-html.js",
+  "main": "dist/string-to-html.cjs.js",
+  "module": "dist/string-to-html.js",
   "scripts": {
-    "build": "./node_modules/.bin/browserify test.js -o test-browserify.js -t [ babelify --presets [ es2015 ] ]",
+    "build-test": "./node_modules/.bin/browserify test.js -o test-browserify.js -t [ babelify --presets [ es2015 ] ]",
     "test": "npm run build && ./node_modules/.bin/mocha-phantomjs test.html",
-    "bundle": "rollup string-to-html.js --format iife -o string-to-html-es5.js -n toHtml"
+    "browser": "rollup string-to-html.js --format iife -o dist/string-to-html.iife.js -n toHtml",
+    "node": "rollup string-to-html.js --format cjs --output dist/string-to-html.cjs.js",
+    "es2015": "rollup string-to-html.js --format es --output dist/string-to-html.js",
+    "keeprolling": "yarn browser && yarn es2015 && yarn node",
+    "build": "yarn keeprolling && babel dist/string-to-html.iife.js dist/string-to-html.cjs.js dist/string-to-html.js -d ./",
+    "prepublish": "yarn build"
   },
   "repository": {
     "type": "git",
@@ -18,12 +24,14 @@
   "author": "Rick Lancee",
   "license": "MIT",
   "devDependencies": {
+    "babel-cli": "^6.24.1",
     "babel-preset-es2015": "^6.18.0",
     "babelify": "^7.3.0",
     "browserify": "^13.3.0",
     "chai": "^3.5.0",
     "mocha": "^3.2.0",
     "mocha-phantomjs": "^4.1.0",
-    "rollup": "^0.41.6"
+    "rollup": "^0.41.6",
+    "babel-preset-env": "^1.4.0"
   }
 }
