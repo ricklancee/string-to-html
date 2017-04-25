@@ -5,11 +5,9 @@
 A very simple browser script to parse html strings into document fragments.
 
 ### Usage
-Install the package with yarn or npm; this will install the es6 module of the package. 
+Install the package with yarn or npm.
 
-If you want to use this in your browser without transpiling include the `string-to-html-es5.js` file in a `<script src="string-to-html-es5.js"><script>` tag on your page.
-
-To install the es6 module:
+If you want to use this directly in your browser include the `dist/string-to-html.iife.js` file in a `<script src="dist/string-to-html.iife.js"><script>` tag on your page.
 
 ```bash
 yarn add string-to-html 
@@ -42,6 +40,6 @@ Why a domfragment instead of innerHTML ? Because you can do DOM operations on th
 
 ### Building and Testing
 
-- Install depedencies with `npm install`.
-- To transpile to script to es5 run `npm run bundle` this will output a transpiled version of `string-to-html.js` to `string-to-html-es5.js`.
-- Run the test with `npm run test` or open `test.html` in your browser.
+- Install depedencies with `yarn install`.
+- To bundle and transpile run `yarn build` this will output a transpiled, common js and es2015 module version of `string-to-html.js` to the `dist/` directory.
+- Run tests with `yarn test` or open `test.html` in your browser after running `yarn build-test`.
