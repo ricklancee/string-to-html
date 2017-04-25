@@ -11,8 +11,7 @@
     "node": "rollup string-to-html.js --format cjs --output dist/string-to-html.cjs.js",
     "es2015": "rollup string-to-html.js --format es --output dist/string-to-html.js",
     "keeprolling": "yarn browser && yarn es2015 && yarn node",
-    "build": "yarn keeprolling && babel dist/string-to-html.iife.js dist/string-to-html.cjs.js dist/string-to-html.js -d ./",
-    "prepublish": "yarn build"
+    "build": "yarn keeprolling && babel dist/string-to-html.iife.js dist/string-to-html.cjs.js dist/string-to-html.js -d ./"
   },
   "repository": {
     "type": "git",
