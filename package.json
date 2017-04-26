@@ -1,6 +1,6 @@
 {
   "name": "string-to-html",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "A very simple browser script to parse html strings into document fragments",
   "main": "dist/string-to-html.es2015.js",
   "module": "dist/string-to-html.js",
