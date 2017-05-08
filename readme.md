@@ -6,13 +6,17 @@ A very simple browser script to parse html strings into document fragments.
 
 ### Usage
 Install the package with yarn or npm.
-
-If you want to use this directly in your browser include the `dist/string-to-html.iife.js` file in a `<script src="dist/string-to-html.iife.js"><script>` tag on your page.
-
+ 
 ```bash
 yarn add string-to-html 
 # Or use npm
 npm install string-to-html
+```
+
+If you want to use this directly in your browser download and include the `dist/string-to-html.js` file in a script tag on your page.
+
+```html
+<script src="./string-to-html.js"><script>
 ```
 
 Example usage:
